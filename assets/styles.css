@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: "Roboto", sans-serif;
+
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #F2EBDF;
+}
+.container {
+    display: flex;
+    clear: both;
+}
+
+.nav {
+    position: fixed;
+    width: 30vw;
+    /*height: 718px;*/
+    /*height: 100%;*/
+    /*max-height: 1680px;*/
+    min-height: 820px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #010D00;
+}
+
+.content {
+    width: 65vw;
+    padding: 1rem 5rem;
+    margin-left: 27.1rem;
+    background-color: #F2EBDF;
+    max-height: 1680px;
+    min-height: 788px;
+}
+
+.DateRangePickerInput__withBorder{
+    margin: 1rem;
+}
+
+.start {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 1cm;
+    color: #F2EBDF;
+}
+
+.input-place p {
+    color: antiquewhite;
+    font-size: larger;
+}
+.form {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    height: 1.5rem;
+}
+.form button {
+    width: 5rem;
+    background-color: #F2EBDF;
+    color: black;
+    border: none;
+}
+#dropdown_tickers{
+    height: 2rem;
+
+    /*border-radius: 1000px;*/
+    border-right: 1000px;
+    min-width: 12rem;
+    min-height: 2rem;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+#submit{
+    margin-left: 1rem;
+    min-width: 7rem;
+    min-height: 2rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+.buttons {
+    margin: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-around;
+}
+#forecast {
+    margin-top: 2rem;
+    height: 2.2rem;
+}
+#n_days {
+    height: 2rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+
+}
+.buttons button {
+    /*width: 7.5rem;*/
+    /*height: 2.5rem;*/
+    /*border: none;*/
+    /*background-color: #BFB2AA;*/
+    /*color: rgb(0, 0, 0);*/
+
+    min-width: 7rem;
+    min-height: 2rem;
+    margin: 2rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+
+button::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(7rem + 12px);
+    min-height: calc(2rem + 12px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+    opacity: 1;
+}
+
+button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+}
+
+/*@keyframes ring {*/
+/*    0% {*/
+/*        width: 30px;*/
+/*        height: 30px;*/
+/*        opacity: 1;*/
+/*    }*/
+/*    100% {*/
+/*        width: 300px;*/
+/*        height: 300px;*/
+/*        opacity: 0;*/
+/*    }*/
+/*}*/
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.header p {
+    font-size: 4rem;
+    margin-left: 3rem;
+    line-height: 80%;
+}
+
+#logo {
+    max-width: 15rem;
+    height: auto;
+}
