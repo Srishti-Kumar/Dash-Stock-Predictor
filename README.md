@@ -1,1 +1,4 @@
-# Dash-Stock-Predictor
+python app.py
+
+
+
