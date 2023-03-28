@@ -22,7 +22,7 @@ def get_stock_price_fig(df):
     fig = px.line(df,
                   x="Date",
                   y=["Close", "Open"],
-                  title="Closing and Openning Price vs Date")
+                  title="STOCK PRICE : Closing and Opening Price vs Date")
     return fig
 
 
@@ -31,7 +31,7 @@ def get_more(df):
     fig = px.scatter(df,
                      x="Date",
                      y="EWA_20",
-                     title="Exponential Moving Average vs Date")
+                     title="INDICATORS : Exponential Moving Average vs Date")
     fig.update_traces(mode='lines+markers')
     return fig
 
@@ -40,9 +40,8 @@ app = Dash(
     __name__,
     external_stylesheets=[
         "https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-    ],meta_tags=[
-        {"name": "viewport", "content": "width=device-width, initial-scale=1"}
-    ])
+    ],meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1.0,maximum-scale=1.2,minimum-scale=0.5,"} , {"name": "apple-mobile-web-app-capable", "content": "yes"}]
+    )
 server = app.server
 # html layout of site
 app.layout = html.Div(
@@ -58,51 +57,36 @@ app.layout = html.Div(
                         dcc.Input(id="dropdown_tickers", type="text"),
                         html.Button("Submit", id='submit'),
                     ],
-                        className="form")
+                    className="form")
                 ],
                     className="input-place"),
                 html.Div([
-                    dcc.DatePickerRange(id='my-date-picker-range',
-                                        min_date_allowed=dt(1995, 8, 5),
-                                        max_date_allowed=dt.now(),
-                                        initial_visible_month=dt.now(),
-                                        end_date=dt.now().date()),
-                ],
-                    className="date"),
+                    dcc.DatePickerRange(id='my-date-picker-range',min_date_allowed=dt(1995, 8, 5),max_date_allowed=dt.now(),initial_visible_month=dt.now(),end_date=dt.now().date()),
+                ],className="date"),
+                
                 html.Div([
-                    html.Button(
-                        "Stock Price", className="stock-btn", id="stock"),
-                    html.Button("Indicators",
-                                className="indicators-btn",
-                                id="indicators"),
-                    dcc.Input(id="n_days",
-                              type="text",
-                              placeholder="number of days"),
-                    html.Button(
-                        "Forecast", className="forecast-btn", id="forecast")
-                ],
-                    className="buttons"),
+                    html.Button("Stock Price", className="stock-btn", id="stock"),
+                    html.Button("Indicators",className="indicators-btn",id="indicators"),
+                    dcc.Input(id="n_days",type="text",placeholder="number of days"),
+                    html.Button("Forecast", className="forecast-btn", id="forecast")
+                ],className="buttons"),
                 # here
-            ],
-            className="nav"),
+            ],className="nav"
+        ),
 
         # content
         html.Div(
             [
-                html.Div(
-                    [  # header
-                        html.Img(id="logo"),
-                        html.P(id="ticker")
-                    ],
-                    className="header"),
+                html.Div([html.Img(id="logo"),html.P(id="ticker")],className="header"),
                 html.Div(id="description", className="decription_ticker"),
+                html.Br(),
                 html.Div([], id="graphs-content"),
+                html.Br(),
                 html.Div([], id="main-content"),
+                html.Br(),
                 html.Div([], id="forecast-content")
-            ],
-            className="content"),
-    ],
-    className="container")
+            ],className="content"),
+    ],className="container")
 
 
 # callback for company info
@@ -114,9 +98,9 @@ app.layout = html.Div(
     Output("indicators", "n_clicks"),
     Output("forecast", "n_clicks")
 ], [Input("submit", "n_clicks")], [State("dropdown_tickers", "value")])
-def update_data(n, val):  # inpur parameter(s)
+def update_data(n, val):  # input parameter(s)
     if n == None:
-        return "Hey there! Please enter a legitimate stock code to get details.", "https://www.saleshacker.com/wp-content/uploads/2017/05/sales-forecasting-metrics-1024x768.jpg", "Stock Predictor", None, None, None
+        return "Please enter a legitimate stock code to get details, Ex: AAPL, TSLA, GOOG, etc.", "https://www.saleshacker.com/wp-content/uploads/2017/05/sales-forecasting-metrics-1024x768.jpg", "Stock Predictor", None, None, None,
         # raise PreventUpdate
     else:
         if val == None:
