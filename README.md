@@ -10,6 +10,26 @@ A single-page web application using Dash (a python framework) and some machine l
 ```
 https://github.com/Srishti-Kumar/Dash-Stock-Predictor.git
 ```
+### Creating a virtual environment
+- unix
+```
+python3 -m venv env
+```
+- windows 
+```
+py -m venv env
+```
+
+### Using requirements files
+- unix
+```
+python3 -m pip install -r requirements.txt
+```
+- windows
+```
+py -m pip install -r requirements.txt
+```
+
 
 - to run 
 ```
