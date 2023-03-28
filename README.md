@@ -11,7 +11,7 @@ A single-page web application using Dash (a python framework) and some machine l
 https://github.com/Srishti-Kumar/Dash-Stock-Predictor.git
 ```
 
--to run 
+- to run 
 ```
 python app.py
 ```
