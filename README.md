@@ -21,6 +21,11 @@ python3 -m venv env
 py -m venv env
 ```
 
+### Use the created virtual environment
+```
+source virtualenv_name/bin/activate
+```
+
 ### Using requirements files
 - unix
 ```
