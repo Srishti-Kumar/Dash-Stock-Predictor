@@ -5,7 +5,7 @@ A single-page web application using Dash (a python framework) and some machine l
 - Demo Youtube Link 👉 https://www.youtube.com/watch?v=034xl6a5J00
 - Documentation : https://drive.google.com/file/d/1DB4JUvPSvtk03FI08hqjYmLz_m6FXeO3/view?usp=sharing
 
-![alt text](https://github.com/Srishti-Kumar/Dash-Stock-Predictor/blob/main/images/Project%20Stages.png)
+![Screenshot](https://github.com/Srishti-Kumar/Dash-Stock-Predictor/blob/main/images/Project%20Stages.png)
 
 ## Installation :
 
